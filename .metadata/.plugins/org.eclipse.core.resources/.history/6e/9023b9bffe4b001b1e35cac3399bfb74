@@ -1,0 +1,37 @@
+package StepDefs;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class StepDef_1 {
+	
+	WebDriver driver;
+    String base_url = "https://amazon.in";
+	
+	@Given("User opened browser")
+	public void user_opened_browser() {
+		System.out.println("step1");
+		driver = new ChromeDriver();
+        driver.manage().window().maximize();
+		
+	}
+
+	@Given("User navigated to the home application url")
+	public void user_navigated_to_the_home_application_url() {
+		System.out.println("step2");
+	}
+
+	@When("User Search for product {string}")
+	public void user_search_for_product(String string) {
+		System.out.println("step3");
+	}
+
+	@Then("Search Result page is displayed")
+	public void search_result_page_is_displayed() {
+	    System.out.println("step4");
+	}
+}
